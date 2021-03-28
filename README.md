@@ -20,7 +20,7 @@ psql
 
 create database t3_vakfi_case;
 
-create user 'admin';
+create user admin;
 
 alter user admin with encrypted password '12345';
 
