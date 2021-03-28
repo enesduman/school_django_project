@@ -24,6 +24,7 @@
       <td>{{kullanici.okul}}</td>
       <td>{{kullanici.sinif}}</td>
     <td><a href="{% url 'user:register_detail' username=kullanici.username %}"><i class="fas fa-user-edit"></i></a></td>
+    <td><a href="{% url 'user:user_delete' username=kullanici.username %}"><i style="color:red" class="fas fa-trash-alt"></i></a></td>
 
 
     </tr>
@@ -50,6 +51,7 @@
       <td>{{ogr.okul}}</td>
       <td>{{ogr.sinif}}</td>
     <td><a href="{% url 'user:register_detail' username=ogr.username %}"><i class="fas fa-user-edit"></i></a></td>
+    <td><a href="{% url 'user:user_delete' username=ogr.username %}"><i style="color:red" class="fas fa-trash-alt"></i></a></td>
 
 
     </tr>

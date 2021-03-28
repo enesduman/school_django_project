@@ -72,3 +72,8 @@ def dashboard(request):
             cx['ogretmen'].append(o)
 
     return render(request,"dashboard.html",cx)
+
+def user_delete(request,username):
+    user = Account.objects.get(username=username)
+    user.delete()
+    return redirect("user:dashboard")
