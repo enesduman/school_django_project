@@ -65,7 +65,7 @@ python3 manage.py migrate
 
 python3 manage.py createsuperuser
 
-python manage.py runserver
+python3 manage.py runserver
 
 ```
 
@@ -74,3 +74,7 @@ python manage.py runserver
 ```
 http://127.0.0.1:8000
 ```
+
+### Yeni kayıt oluşturmak için
+
+#### http://127.0.0.1:8000/admin panelinden oluşturduğunuz superuser kullanıcısıyla giriş yapıp okul ve sınıf kaydetmeniz gerekmektedir.
