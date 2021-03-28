@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="mt-5 jumbotron text-center">
+<h4>Okul Kontrol Uygulamasına Hoşgeldiniz.</h4>
+<p>
+  {% if request.user.is_authenticated %}
+    {% if request.user.user_type == 1 %}
+    <h2>Hoşgeldiniz, Müdür </h2>
+    {% elif request.user.user_type == 2 %}
+    <h2>Hoşgeldiniz, Öğretmen </h2>
+    {% elif request.user.user_type == 3 %}
+    <h2>Hoşgeldiniz, Öğrenci </h2>
+    {% endif %}
+
+  {% endif %}
+</p>
+</div>
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Okul Adı</th>
+      <th scope="col">İl</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% if tek  %}
+  {% for tekokul in tek %}      
+    <tr>
+      <td>{{tekokul.adi}}</td>
+      <td>{{tekokul.il}}</td>
+    </tr>
+    {% endfor %}
+    {% endif %}
+  </tbody>
+</table>
+
+
+
+{% endblock body %}

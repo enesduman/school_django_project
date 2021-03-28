@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="jumbotron text-center">
+<h3>Kontrol Paneli,
+{% if request.user.user_type == 1 %}Müdür{% elif request.user.user_type == 2 %}Öğretmen{% endif %} </h3>
+
+{% if request.user.user_type == 1  %}
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Öğretmen Adı</th>
+      <th scope="col">Öğretmen Kullanıcı Adı</th>
+      <th scope="col">Öğretmenin Okulu</th>
+      <th scope="col">Öğretmenin Sınıfı</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for kullanici in ogretmen %}
+    <tr>
+      <td>{{kullanici.name}}</td>
+      <td>{{kullanici.username}}</td>
+      <td>{{kullanici.okul}}</td>
+      <td>{{kullanici.sinif}}</td>
+    <td><a href="{% url 'user:register_detail' username=kullanici.username %}"><i class="fas fa-user-edit"></i></a></td>
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Öğrenci Adı</th>
+      <th scope="col">Öğrencinin Kullanıcı Adı</th>
+      <th scope="col">Öğrencinin Okulu</th>
+      <th scope="col">Öğrencinin Sınıfı</th>
+      <th scope="col"></th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for ogr in ogrenci %}
+    <tr>
+      <td>{{ogr.name}}</td>
+      <td>{{ogr.username}}</td>
+      <td>{{ogr.okul}}</td>
+      <td>{{ogr.sinif}}</td>
+    <td><a href="{% url 'user:register_detail' username=ogr.username %}"><i class="fas fa-user-edit"></i></a></td>
+
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% elif request.user.user_type == 2 %}
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Öğrenci Adı</th>
+      <th scope="col">Öğrencinin Kullanıcı Adı</th>
+      <th scope="col">Öğrencinin Okulu</th>
+      <th scope="col">Öğrencinin Sınıfı</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for ogr in ogrenci %}
+    <tr>
+      <td>{{ogr.name}}</td>
+      <td>{{ogr.username}}</td>
+      <td>{{ogr.okul}}</td>
+      <td>{{ogr.sinif}}</td>
+      <td><a href="{% url 'user:register_detail' username=ogr.username %}"><i class="fas fa-user-edit"></i></a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endif %}
+
+</div>
+{% endblock body %}
