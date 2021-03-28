@@ -7,6 +7,9 @@ Yapılması gerekenler:
 
 
 sudo apt-get install libpq-dev python-dev
+
+sudo apt-get install postgresql postgresql-contrib
+
 ```
 
 ## Postgresql Yapılandırma
