@@ -16,6 +16,9 @@ sudo apt-get install postgresql postgresql-contrib
 ```
 sudo su postgres
 
+### Eğer psql komutu çalışmazsa ``` sudo service postgresql restart ```
+
+
 psql
 
 create database t3_vakfi_case;
@@ -67,3 +70,7 @@ python manage.py runserver
 ```
 
 ### Tüm adımları tamamladıktan sonra internet tarayıcısından local portunda proje çalışır durumda olucaktır.
+
+```
+http://127.0.0.1:8000
+```
