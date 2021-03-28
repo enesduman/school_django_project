@@ -7,6 +7,7 @@ from django.utils.translation import gettext, gettext_lazy as _
 @admin.register(Account)
 class UserAdmin(UserAdmin):
     list_display= ["name","username","user_type","okul",'sinif']
+    list_display_links= ["name","username"]
     search_fields= ["name"]
     readonly_fields=['date_joined','last_login']
     fieldsets = (

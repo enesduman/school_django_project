@@ -16,10 +16,10 @@ sudo apt-get install postgresql postgresql-contrib
 ```
 sudo su postgres
 
-### Eğer psql komutu çalışmazsa ``` sudo service postgresql restart ```
-
 
 psql
+
+Eğer psql komutu çalışmazsa ``` sudo service postgresql restart ``` komutunu çalıştırıp tekrar psql yazınız.
 
 create database t3_vakfi_case;
 
