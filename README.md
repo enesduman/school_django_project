@@ -1,4 +1,4 @@
-# t3_case
+# School Django Project
 
 Yapılması gerekenler:
 
@@ -21,13 +21,13 @@ psql
 
 Eğer psql komutu çalışmazsa ``` sudo service postgresql restart ``` komutunu çalıştırıp tekrar psql yazınız.
 
-create database t3_vakfi_case;
+create database school;
 
 create user admin;
 
 alter user admin with encrypted password '12345';
 
-grant all privileges on database t3_vakfi_case to admin;
+grant all privileges on database school to admin;
 
 ```
 
@@ -55,7 +55,7 @@ git clone <project_url>
 ```
 source .venv/bin/activate
 
-cd t3_case
+cd <project_folder>
 
 pip install -r requirements.txt
 
